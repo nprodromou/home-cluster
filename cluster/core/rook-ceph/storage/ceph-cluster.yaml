@@ -13,7 +13,7 @@ spec:
   continueUpgradeAfterChecksEvenIfNotHealthy: false
   removeOSDsIfOutAndSafeToRemove: false
   mon:
-    count: 3
+    count: 6
     allowMultiplePerNode: false
   monitoring:
     enabled: true
@@ -60,12 +60,20 @@ spec:
       metadataDevice:
       osdsPerDevice: "1"
     nodes:
-    - name: "k8s-3"
+    - name: "aprp02"
       devices:
-      - name: "nvme0n1"
-    - name: "k8s-4"
+      - name: "sda"
+    - name: "aprp04"
       devices:
-      - name: "nvme0n1"
-    - name: "k8s-5"
+      - name: "sda"
+    - name: "aprp06"
       devices:
-      - name: "nvme0n1"
+      - name: "sda"
+    - name: "aprp08"
+      devices:
+      - name: "sda"
+    - name: "aprp10"
+      devices:
+      - name: "sda"
+    - name: "aprp12"
+      devices:
