@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
  - rook-ceph
  - cert-manager
+ - external-dns
  - external-snapshotter
  - kube-prometheus-stack
  - traefik
