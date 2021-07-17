@@ -1,0 +1,16 @@
+---
+
+# IP address of node
+ansible_host: "10.50.50.108"
+
+# Ansible user to ssh into servers with
+ansible_user: "pirate"
+# ansible_ssh_pass: "ubuntu"
+# ansible_ssh_common_args: "-o UserKnownHostsFile=/dev/null"
+ansible_become_pass: "party"
+
+# Set enabled to true to mark this host as running a distributed storage rook-ceph
+rook:
+  enabled: true
+  devices:
+  - /dev/sda
