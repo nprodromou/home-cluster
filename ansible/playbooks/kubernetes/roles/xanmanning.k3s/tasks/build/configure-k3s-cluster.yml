@@ -28,12 +28,14 @@
     mode: 0755
   become: "{{ k3s_become_for_systemd | ternary(true, false, k3s_become_for_all) }}"
 
-- name: Ensure k3s cluster token file is present
+- name: Ensure k3s cluster token file is present on workers and secondary control nodes
   ansible.builtin.template:
     src: cluster-token.j2
     dest: "{{ k3s_token_location }}"
     mode: 0600
   become: "{{ k3s_become_for_install_dir | ternary(true, false, k3s_become_for_all) }}"
+  when: (k3s_control_node and not k3s_primary_control_node)
+        or not k3s_control_node
   notify:
     - restart k3s
 
@@ -67,7 +69,7 @@
     - ensure_secondary_controllers_started is not succeeded
     - not ansible_check_mode
   until: ensure_secondary_controllers_started is succeeded
-  retries: "{{ ansible_play_hosts | length }}"
+  retries: "{{ ansible_play_hosts_all | length }}"
   delay: 5
   when:
     - k3s_control_node

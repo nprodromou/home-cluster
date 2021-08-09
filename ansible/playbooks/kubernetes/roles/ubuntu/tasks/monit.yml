@@ -1,0 +1,27 @@
+---
+ 
+
+- name: Start monit service
+  systemd:
+    name: monit.service
+    state: started
+- name: Configure Web Interface
+  lineinfile:
+    path: /etc/monit/monitrc
+    regexp: ‘httpd port 2812’
+    line: set httpd port 2812 and
+- name: Allow Admin
+  lineinfile:
+    path: /etc/monit/monitrc
+    regexp: ‘# allow admin:monit’
+    line: allow admin:monit
+- name: Restart monit service
+  systemd:
+    name: monit.service
+    state: restarted
+# - name: Add ssh monitoring
+#   command: ln -s /etc/monit/conf-available/openssh-server /etc/monit/conf-enabled/openssh-server
+# - name: Restart monit service
+#   systemd:
+#     name: monit.service
+#     state: restarted

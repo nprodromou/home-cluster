@@ -13,6 +13,7 @@ packages:
   - iputils-ping
   - ipvsadm
   - lvm2
+  - monit
   - net-tools
   - nfs-common
   - nano

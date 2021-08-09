@@ -12,9 +12,9 @@
   tags:
   - kernel
 
-- include: network.yml
+- include: monit.yml
   tags:
-  - network
+  - monit
 
 - include: filesystem.yml
   tags:
