@@ -8,7 +8,7 @@
   gather_facts: true
   any_errors_fatal: true
   tasks:
-  - name: upgrade
+  - name: Ubuntu Upgrades
     ansible.builtin.apt:
       upgrade: full
       update_cache: true
@@ -18,3 +18,15 @@
     register: apt_upgrade
     retries: 5
     until: apt_upgrade is success
+  
+
+- hosts:
+  - master
+  - worker
+  become: true
+  gather_facts: true
+  any_errors_fatal: true
+  tasks:
+  - name: Reboot all k3s servers
+    reboot:
+      reboot_timeout: 3600

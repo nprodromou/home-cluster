@@ -1,7 +1,7 @@
 ---
 
 # The interface on the host kube-vip should attach to
-kubevip_interface: bond0
+kubevip_interface: eth0
 
 kubevip_bgp_peer_ip: 10.50.50.1
 
