@@ -6,6 +6,11 @@
   when:
   - ansible_hostname != inventory_hostname
 
+  - name: Generate /etc/hosts file
+    template:
+      src=templates/hosts.j2
+      dest=/etc/hosts
+
 - name: Check for bridge-nf-call-iptables
   ansible.builtin.stat:
     path: /proc/sys/net/bridge/bridge-nf-call-iptables

@@ -23,7 +23,7 @@ k3s_etcd_datastore: true
 
 # Control Plane registration address
 # ...this is set to my kube-vip address
-k3s_registration_address: k8scluster
+k3s_registration_address: 10.50.50.30
 
 #
 # Uncomment the config below on new installations

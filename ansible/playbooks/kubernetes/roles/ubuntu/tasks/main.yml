@@ -4,6 +4,10 @@
   tags:
   - locale
 
+- include: network.yml
+  tags:
+  - network
+
 - include: packages.yml
   tags:
   - packages

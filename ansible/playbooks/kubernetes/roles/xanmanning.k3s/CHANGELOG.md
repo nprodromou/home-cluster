@@ -14,6 +14,48 @@
 ---
 -->
 
+## 2021-08-18, v2.10.6
+
+### Notable changes
+
+ -  Fix: Define registration address from node-ip #142
+
+---
+
+## 2021-08-14, v2.10.5
+
+### Notable changes
+
+ - Add advertised address #139
+
+### Contributors
+
+- [@abelfodil](https://github.com/abelfodil)
+
+---
+
+## 2021-07-24, v2.10.4
+
+### Notable changes
+
+- Updated systemd template to use token when joining a cluster #138
+
+---
+
+## 2021-07-21, v2.10.3
+
+### Notable changes
+
+- fix: typo #133
+- fix: restore clustering and avoid failure with jinja2_native=true #135
+- fix: do ignore etcd member count when uninstalling #136
+
+### Contributors
+
+- [@Yaro](https://github.com/Yajo)
+
+---
+
 ## 2021-06-22, v2.10.2
 
 ### Notable changes
