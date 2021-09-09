@@ -60,7 +60,7 @@ spec:
       metadataDevice:
       osdsPerDevice: "1"
     nodes:
-    - name: "aprp0"
+    - name: "aprp01"
       devices:
       - name: "sda"
     - name: "aprp02"
