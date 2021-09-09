@@ -24,4 +24,4 @@ spec:
               service:
                 name: traefik
                 port:
-                  number: 9001
+                  number: 9000
